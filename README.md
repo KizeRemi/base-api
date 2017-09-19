@@ -1,12 +1,11 @@
-Wiki-API
+Base-API
 ========
 
-**Réalisé par Mavillaz Rémi and Paul Girardin**
+**Réalisé par Mavillaz Rémi**
 
 Github KizeRemi: https://github.com/KizeRemi  
-GitHub PaulGirardin: https://github.com/PaulGirardin
 
-Projet Wiki pour une école primaire. Le projet est décomposé en 2 parties : API et Interface utilisateur. Ce dépot comporte uniquement la partie API réalisée sous Symfony 3.2
+Projet Symfony regroupant les bundles et configs afin de créer une API Restful 
 
 ## Installation
 
