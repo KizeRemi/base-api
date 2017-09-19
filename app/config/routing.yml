@@ -22,6 +22,10 @@ user:
     type:       rest
     resource:   AppBundle\Controller\UserController
 
+default:
+    type:       rest
+    resource:   AppBundle\Controller\DefaultController
+
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
