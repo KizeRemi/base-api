@@ -30,10 +30,11 @@ class DefaultController extends Controller implements ClassResourceInterface
      *     404 = "Not found"
      *   }
      * )
+     * 
      * @FOSRest\Get("/")
      */
     public function getAction()
     {
-        return [];
+        return ["dd" => "dd"];
     }
 }

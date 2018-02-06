@@ -17,10 +17,10 @@ framework:
         strict_requirements: ~
     form: ~
     csrf_protection: ~
-    validation: { enable_annotations: true }
-    #serializer: { enable_annotations: true }
+    validation: { enabled: true, enable_annotations: true }
     templating:
         engines: ['twig']
+
     default_locale: '%locale%'
     trusted_hosts: ~
     trusted_proxies: ~
@@ -81,19 +81,16 @@ fos_user:
 fos_rest:
     param_fetcher_listener: true
     body_listener: true
-    disable_csrf_role: IS_AUTHENTICATED_ANONYMOUSLY
-    #service:
-    #    templating: ~
-    view:
-        default_engine: twig
-        view_response_listener: 'force'
-        formats:
-            json: true
     routing_loader:
         default_format: json
         include_format: false
-    serializer:
-        serialize_null: true
+    format_listener:
+        enabled: true
+        rules:
+            - { path: '^/', priorities: ['json'], fallback_format: 'json' }
+    versioning: true
+    view:
+        view_response_listener: 'force'
 
 jms_serializer:
     metadata:
@@ -126,3 +123,7 @@ lexik_jwt_authentication:
     public_key_path:  %jwt_public_key_path%
     pass_phrase:      %jwt_key_pass_phrase%
     token_ttl:        %jwt_token_ttl%
+
+sensio_framework_extra:
+   view:
+       annotations: true

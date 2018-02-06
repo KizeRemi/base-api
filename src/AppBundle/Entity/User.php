@@ -21,10 +21,12 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
  *     fields={"username"},
  *     message="Un utilisateur possède déjà ce pseudo.",
  * )
+ *
  */
 class User extends BaseUser
 {
     const ROLE_USER = "ROLE_USER";
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -33,19 +35,19 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\Column(name="name",type="string", length=25, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     protected $name;
 
     /**
-     * @ORM\Column(name="lastname",type="string", length=25, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
-    protected $lastname;
+    private $lastname;
 
     /**
-     * @ORM\Column(name="birth_date",type="date", length=25, nullable=true)
+     * @ORM\Column(type="date", length=25, nullable=true)
      */
-    protected $birthDate;
+    private $birthDate;
 
     public function __construct()
     {
